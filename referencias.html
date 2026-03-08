@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referências Bibliográficas | IoT </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="cursor-glow" class="glow-point"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand code-font fw-bold" href="index.html">
+                <span class="text-cyan"><i class="bi bi-arrow-left"></i></span> RETURN_TO_CORE
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge border border-cyan text-cyan code-font px-3">DOCS: REFERENCES</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center" style="padding-top: 150px; padding-bottom: 50px;">
+        <h1 class="hero-title mb-3">FONTES DE PESQUISA</h1>
+        <p class="code-font text-cyan">BIBLIOGRAFIA E DOCUMENTAÇÃO TÉCNICA</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-file-earmark-check-fill me-2"></i> 01. PADRÕES E DOCUMENTAÇÕES</h2>
+            <div class="list-group list-group-flush bg-transparent">
+                <div class="list-group-item bg-transparent text-secondary border-secondary py-3">
+                    <strong class="text-white">MQTT Organization.</strong> (2024). MQTT Version 5.0 Protocol Specification. 
+                    <br><small class="code-font text-cyan">Disponível em: mqtt.org</small>
+                </div>
+                <div class="list-group-item bg-transparent text-secondary border-secondary py-3">
+                    <strong class="text-white">LoRa Alliance.</strong> (2023). What is LoRaWAN Specification? Technical Overview. 
+                    <br><small class="code-font text-cyan">Disponível em: lora-alliance.org</small>
+                </div>
+                <div class="list-group-item bg-transparent text-secondary border-secondary py-3">
+                    <strong class="text-white">Bluetooth SIG.</strong> (2025). Bluetooth Core Specification v5.4. 
+                    <br><small class="code-font text-cyan">Disponível em: bluetooth.com</small>
+                </div>
+                <div class="list-group-item bg-transparent text-secondary border-secondary py-3">
+                    <strong class="text-white">3GPP.</strong> (2024). Release 17: Cellular IoT (NB-IoT & LTE-M) Standards. 
+                    <br><small class="code-font text-cyan">Disponível em: 3gpp.org</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-book-half me-2"></i> 02. LITERATURA ACADÊMICA</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-3 border border-secondary rounded h-100">
+                        <p class="text-white mb-1 fw-bold">Internet das Coisas: Fundamentos e Aplicações</p>
+                        <p class="text-secondary small">CASAGRANDE, A.; GOMES, J. (2022). Editora Elsevier. Uma análise profunda sobre as camadas de rede em sistemas embarcados.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border border-secondary rounded h-100">
+                        <p class="text-white mb-1 fw-bold">IoT Communication Protocols: A Survey</p>
+                        <p class="text-secondary small">AL-FUQAHA, A. et al. (2015). IEEE Communications Surveys & Tutorials. Comparativo técnico de latência e consumo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="iot-card mb-5 text-center">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-code-square me-2"></i> 03. CRÉDITOS DE DESENVOLVIMENTO</h2>
+            <p class="text-secondary mb-4">Recursos utilizados na construção deste diretório de documentação:</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <span class="badge border border-secondary p-2 px-3"><i class="bi bi-bootstrap-fill text-purple"></i> Bootstrap 5.3</span>
+                <span class="badge border border-secondary p-2 px-3"><i class="bi bi-google"></i> Google Fonts (Inter/Mono)</span>
+                <span class="badge border border-secondary p-2 px-3"><i class="bi bi-palette"></i> Lucide & Bootstrap Icons</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="code-font text-secondary small mb-2">END_OF_DOCUMENTATION_LOG</p>
+            <p class="text-white mb-0">Desenvolvido por Jefferson e Letícia</p>
+            <p class="text-secondary x-small">2026 // Sistemas Embarcados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.pageX + 'px';
+            glow.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+
+</html>

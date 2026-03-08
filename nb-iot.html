@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NB-IoT & LTE-M | Cellular IoT Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="cursor-glow" class="glow-point"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand code-font fw-bold" href="index.html">
+                <span class="text-cyan"><i class="bi bi-arrow-left"></i></span> RETURN_TO_CORE
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge border border-cyan text-cyan code-font px-3">PROTOCOL: NB-IoT / LTE-M</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center" style="padding-top: 150px; padding-bottom: 50px;">
+        <h1 class="hero-title mb-3">NB-IoT & LTE-M</h1>
+        <p class="code-font text-cyan">3GPP LPWAN CELLULAR STANDARDS</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-terminal-fill me-2"></i> 01. DEFINIÇÃO</h2>
+            <p class="card-text fs-5">
+                Ambas são tecnologias **LPWAN** baseadas em redes celulares licenciadas (4G e 5G). Enquanto o **NB-IoT** (Narrowband IoT) foca em eficiência máxima para dados estáticos, o **LTE-M** (Long Term Evolution for Machines) oferece maior largura de banda e suporte a mobilidade, sendo o "irmão mais forte" da família celular IoT.
+            </p>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-layout-split me-2"></i> 02. ANÁLISE COMPARATIVA</h2>
+            <p class="card-text">
+                A escolha entre um e outro depende criticamente da aplicação. Abaixo, as principais diferenças de operação:
+            </p>
+            
+            
+            
+            <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                    <div class="p-3 border border-secondary rounded bg-black h-100">
+                        <h6 class="text-cyan fw-bold"><i class="bi bi-cpu"></i> NB-IoT</h6>
+                        <ul class="small text-secondary ps-3">
+                            <li>Banda estreita (180 kHz).</li>
+                            <li>Latência alta (segundos).</li>
+                            <li>Ideal para sensores fixos (hidrômetros, medidores de gás).</li>
+                            <li>Penetração profunda em subsolos.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border border-secondary rounded bg-black h-100">
+                        <h6 class="text-cyan fw-bold"><i class="bi bi-speedometer2"></i> LTE-M (eMTC)</h6>
+                        <ul class="small text-secondary ps-3">
+                            <li>Largura de banda de até 1.4 MHz.</li>
+                            <li>Baixa latência (milissegundos).</li>
+                            <li>Suporta **Handover** (conexão contínua em movimento).</li>
+                            <li>Suporta transmissão de voz (VoLTE).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-cpu-fill me-2"></i> 03. SPEC_SHEET</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover border-secondary">
+                    <thead class="code-font text-cyan">
+                        <tr>
+                            <th>RECURSO</th>
+                            <th>NB-IoT</th>
+                            <th>LTE-M</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-secondary">
+                        <tr>
+                            <td class="text-white fw-bold">Taxa de Dados</td>
+                            <td>~26 kbps</td>
+                            <td>Até 1 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">Espectro</td>
+                            <td>Licenciado</td>
+                            <td>Licenciado</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">Mobilidade</td>
+                            <td>Não (Somente estático)</td>
+                            <td>Sim (Full Mobility)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">Consumo</td>
+                            <td>Mínimo</td>
+                            <td>Baixo/Médio</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #10b981;">
+                    <h3 class="card-title h5 text-success fw-bold"><i class="bi bi-check-circle-fill me-2"></i> VANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>**QoS Garantida:** Sem interferência por operar em banda licenciada.</li>
+                        <li>**Segurança:** Utiliza a robusta criptografia das redes móveis (SIM Cards).</li>
+                        <li>**Escalabilidade:** Suporta até 100.000 dispositivos por célula de antena.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #ef4444;">
+                    <h3 class="card-title h5 text-danger fw-bold"><i class="bi bi-x-circle-fill me-2"></i> DESVANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>**Custo:** Exige pagamento de planos de dados às operadoras.</li>
+                        <li>**Dependência:** Limitado à cobertura das torres de celular.</li>
+                        <li>**Hardware:** Módulos de rádio mais caros que LoRa/Zigbee.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="iot-card mb-5">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-rocket-takeoff-fill me-2"></i> 04. CASOS_DE_USO</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-truck fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">LTE-M: Rastreamento</h5>
+                        <p class="small text-secondary">Monitoramento de frotas e cargas em movimento nacional.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-droplet-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">NB-IoT: Smart Water</h5>
+                        <p class="small text-secondary">Medição remota de água em bueiros e locais de difícil acesso.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-hospital-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Telemedicina</h5>
+                        <p class="small text-secondary">Dispositivos médicos que precisam de conexão ultra-segura e confiável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="code-font text-secondary small mb-2">END_OF_CELLULAR_DOCS</p>
+            <p class="text-white mb-0">Jefferson e Letícia</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.pageX + 'px';
+            glow.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+
+</html>

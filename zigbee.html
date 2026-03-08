@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zigbee Protocol | Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="cursor-glow" class="glow-point"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand code-font fw-bold" href="index.html">
+                <span class="text-cyan"><i class="bi bi-arrow-left"></i></span> RETURN_TO_CORE
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge border border-cyan text-cyan code-font px-3">PROTOCOL: ZIGBEE</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center" style="padding-top: 150px; padding-bottom: 50px;">
+        <h1 class="hero-title mb-3">ZIGBEE</h1>
+        <p class="code-font text-cyan">IEEE 802.15.4 WIRELESS MESH STANDARD</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-terminal-fill me-2"></i> 01. DEFINIÇÃO</h2>
+            <p class="card-text fs-5">
+                O Zigbee é um protocolo de rede sem fio de baixo consumo, baixa taxa de dados e curto alcance, baseado no padrão <strong>IEEE 802.15.4</strong>. Ele foi criado para automação e controle, onde a simplicidade do hardware e a longa duração da bateria são mais importantes do que a velocidade de conexão.
+            </p>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-diagram-3-fill me-2"></i> 02. TOPOLOGIA EM MALHA</h2>
+            <p class="card-text">
+                O diferencial do Zigbee é a rede <strong>Mesh (Malha)</strong>. Diferente do Wi-Fi, onde todos se ligam ao roteador central, no Zigbee os dispositivos retransmitem os dados uns para os outros, criando uma rede auto-regenerativa.
+            </p>
+            
+            
+            
+            <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                    <div class="p-3 border border-secondary rounded bg-black h-100">
+                        <h6 class="text-white fw-bold">COORDENADOR</h6>
+                        <small class="text-secondary">O cérebro da rede. Só existe um por rede e ele inicia o sistema e armazena chaves de segurança.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border border-cyan rounded bg-black h-100">
+                        <h6 class="text-cyan fw-bold">ROTEADOR</h6>
+                        <small class="text-secondary">Dispositivos alimentados pela rede elétrica que estendem o sinal e roteiam mensagens.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border border-secondary rounded bg-black h-100">
+                        <h6 class="text-white fw-bold">END DEVICE</h6>
+                        <small class="text-secondary">Sensores a bateria que apenas enviam dados. Eles "dormem" para economizar energia.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-cpu-fill me-2"></i> 03. SPEC_SHEET</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover border-secondary">
+                    <thead class="code-font text-cyan">
+                        <tr>
+                            <th>RECURSO</th>
+                            <th>VALOR / TIPO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-secondary">
+                        <tr>
+                            <td class="text-white fw-bold">FREQUÊNCIA</td>
+                            <td>2.4 GHz (Global) / 915 MHz (Americas)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">ALCANCE</td>
+                            <td>10m a 100m (pode ser estendido via Mesh)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">TAXA DE DADOS</td>
+                            <td>Até 250 kbps</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">NODOS NA REDE</td>
+                            <td>Até 65.000 dispositivos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #10b981;">
+                    <h3 class="card-title h5 text-success fw-bold"><i class="bi bi-check-circle-fill me-2"></i> VANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>Rede Robusta: Se um roteador falha, os dados acham outro caminho.</li>
+                        <li>Extrema Eficiência: Baterias podem durar anos.</li>
+                        <li>Segurança: Criptografia AES de 128 bits nativa.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #ef4444;">
+                    <h3 class="card-title h5 text-danger fw-bold"><i class="bi bi-x-circle-fill me-2"></i> DESVANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>Baixa Velocidade: Inviável para áudio ou vídeo.</li>
+                        <li>Interferência: Sofre com Wi-Fi e Micro-ondas (2.4 GHz).</li>
+                        <li>Complexidade: Configuração de rede mesh é mais técnica.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="iot-card mb-5">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-rocket-takeoff-fill me-2"></i> 04. CASOS_DE_USO</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-lamp-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Smart Lighting</h5>
+                        <p class="small text-secondary">Lâmpadas inteligentes (ex: Philips Hue) que formam uma malha pela casa.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-thermometer-half fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">HVAC Control</h5>
+                        <p class="small text-secondary">Controle de temperatura e umidade em edifícios comerciais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-shield-lock-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Security</h5>
+                        <p class="small text-secondary">Sensores de porta, janela e movimento em sistemas de alarme.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="code-font text-secondary small mb-2">END_OF_LINE_ZIGBEE</p>
+            <p class="text-white mb-0">Jefferson e Letícia</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.pageX + 'px';
+            glow.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Protocol | Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="cursor-glow" class="glow-point"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand code-font fw-bold" href="index.html">
+                <span class="text-cyan"><i class="bi bi-arrow-left"></i></span> RETURN_TO_CORE
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge border border-cyan text-cyan code-font px-3">PROTOCOL: MQTT</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center" style="padding-top: 150px; padding-bottom: 50px;">
+        <h1 class="hero-title mb-3">MQTT PROTOCOL</h1>
+        <p class="code-font text-cyan">MESSAGE QUEUING TELEMETRY TRANSPORT</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-terminal-fill me-2"></i> 01. DEFINIÇÃO</h2>
+            <p class="card-text fs-5">
+                O MQTT é um protocolo de transporte de mensagens leve, baseado no modelo de <strong>Publicação/Assinatura (Pub/Sub)</strong>. 
+                Ele foi projetado especificamente para conexões remotas onde a largura de banda é limitada e os dispositivos possuem 
+                baixo poder de processamento ou energia limitada.
+            </p>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-diagram-3-fill me-2"></i> 02. ARQUITETURA</h2>
+            <p class="card-text">
+                Diferente do modelo tradicional cliente-servidor, o MQTT utiliza um <strong>Broker</strong> como intermediário. 
+                As mensagens são organizadas por <strong>Tópicos</strong>, permitindo que os dispositivos se comuniquem sem estarem diretamente conectados.
+            </p>
+            
+            <div class="row g-3 mt-2">
+                <div class="col-md-4">
+                    <div class="p-3 border border-secondary rounded bg-black">
+                        <h6 class="text-white fw-bold">PUBLISHER</h6>
+                        <small class="text-secondary">O dispositivo que envia os dados para o broker em um tópico específico.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border border-cyan rounded bg-black text-center">
+                        <h6 class="text-cyan fw-bold">BROKER</h6>
+                        <small class="text-secondary">O servidor central que gerencia e distribui as mensagens recebidas.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border border-secondary rounded bg-black">
+                        <h6 class="text-white fw-bold">SUBSCRIBER</h6>
+                        <small class="text-secondary">O dispositivo que assina um tópico para receber atualizações em tempo real.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-cpu-fill me-2"></i> 03. SPEC_SHEET</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover border-secondary">
+                    <thead class="code-font text-cyan">
+                        <tr>
+                            <th>RECURSO</th>
+                            <th>VALOR / TIPO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-secondary">
+                        <tr>
+                            <td class="text-white fw-bold">ALCANCE</td>
+                            <td>Depende da camada de transporte (Wi-Fi, Ethernet, 4G/5G)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">CONSUMO</td>
+                            <td>Ultra-baixo (Projetado para "dormir" entre transmissões)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">TAXA DE DADOS</td>
+                            <td>Baixa (Otimizado para pacotes binários pequenos)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">MODELO</td>
+                            <td>Publish / Subscribe (Pub/Sub)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #10b981;">
+                    <h3 class="card-title h5 text-success fw-bold"><i class="bi bi-check-circle-fill me-2"></i> VANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>Overhead mínimo nas mensagens (cabeçalhos curtos).</li>
+                        <li>Possui níveis de QoS (Qualidade de Serviço) configuráveis.</li>
+                        <li>Excelente para conexões instáveis e alta latência.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #ef4444;">
+                    <h3 class="card-title h5 text-danger fw-bold"><i class="bi bi-x-circle-fill me-2"></i> DESVANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>Ponto único de falha (se o broker cair, a rede para).</li>
+                        <li>Não é adequado para envio de arquivos grandes ou streaming.</li>
+                        <li>Necessita de um broker ativo o tempo todo na rede.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="iot-card mb-5">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-rocket-takeoff-fill me-2"></i> 04. CASOS_DE_USO</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-smartwatch fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Wearables</h5>
+                        <p class="small text-secondary">Monitoramento de saúde enviando pequenos pacotes de dados vitais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-house-gear-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Automação</h5>
+                        <p class="small text-secondary">Controle de lâmpadas, tomadas e sensores térmicos residenciais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-truck fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Logística</h5>
+                        <p class="small text-secondary">Rastreamento de frotas e telemetria de veículos em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="code-font text-secondary small mb-2">END_OF_LINE_MQTT</p>
+            <p class="text-white mb-0">Jefferson e Letícia</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.pageX + 'px';
+            glow.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+
+</html>

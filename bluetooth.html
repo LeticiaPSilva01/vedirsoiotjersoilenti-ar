@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluetooth & BLE | Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="cursor-glow" class="glow-point"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand code-font fw-bold" href="index.html">
+                <span class="text-cyan"><i class="bi bi-arrow-left"></i></span> RETURN_TO_CORE
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge border border-cyan text-cyan code-font px-3">PROTOCOL: BT / BLE</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center" style="padding-top: 150px; padding-bottom: 50px;">
+        <h1 class="hero-title mb-3">BLUETOOTH & BLE</h1>
+        <p class="code-font text-cyan">SHORT-RANGE WIRELESS CONNECTIVITY</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-terminal-fill me-2"></i> 01. DEFINIÇÃO</h2>
+            <p class="card-text fs-5">
+                O Bluetooth é um padrão de comunicação sem fio de curto alcance. Para a Internet das Coisas, o destaque é o <strong>BLE (Bluetooth Low Energy)</strong>, introduzido na versão 4.0. Enquanto o Bluetooth clássico foca em fluxos de dados contínuos, o BLE é otimizado para dispositivos que precisam operar por meses ou anos com uma única bateria de moeda.
+            </p>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-diagram-2-fill me-2"></i> 02. ARQUITETURA</h2>
+            <p class="card-text">
+                O BLE utiliza uma arquitetura baseada em <strong>Generic Attribute Profile (GATT)</strong>. Os dispositivos se conectam em um modelo de <strong>Servidor (quem tem os dados)</strong> e <strong>Cliente (quem solicita os dados)</strong>.
+            </p>
+            
+            <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                    <div class="p-3 border border-secondary rounded bg-black">
+                        <h6 class="text-white fw-bold"><i class="bi bi-broadcast-pin"></i> ADVERTISING</h6>
+                        <p class="small text-secondary mb-0">Dispositivos enviam pequenos pacotes de "anúncio" para que outros saibam que eles estão disponíveis, sem precisar de uma conexão constante.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border border-secondary rounded bg-black">
+                        <h6 class="text-white fw-bold"><i class="bi bi-hdd-network-fill"></i> MESH NETWORKING</h6>
+                        <p class="small text-secondary mb-0">Versões recentes suportam redes em malha, permitindo que dispositivos Bluetooth retransmitam sinal para estender o alcance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="iot-card mb-4">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-cpu-fill me-2"></i> 03. SPEC_SHEET (BLE 5.0+)</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover border-secondary">
+                    <thead class="code-font text-cyan">
+                        <tr>
+                            <th>RECURSO</th>
+                            <th>VALOR / TIPO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-secondary">
+                        <tr>
+                            <td class="text-white fw-bold">ALCANCE</td>
+                            <td>Curto (~10m a 100m em campo aberto)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">CONSUMO</td>
+                            <td>Ultra-baixo (15mA a 20mA durante transmissão)</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">TAXA DE DADOS</td>
+                            <td>1 Mbps a 2 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white fw-bold">LATÊNCIA</td>
+                            <td>Baixa (~3ms a 6ms)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #10b981;">
+                    <h3 class="card-title h5 text-success fw-bold"><i class="bi bi-check-circle-fill me-2"></i> VANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>Consumo de energia extremamente reduzido no modo BLE.</li>
+                        <li>Compatibilidade nativa com quase todos os smartphones modernos.</li>
+                        <li>Custo de implementação de hardware relativamente baixo.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="iot-card" style="border-left: 4px solid #ef4444;">
+                    <h3 class="card-title h5 text-danger fw-bold"><i class="bi bi-x-circle-fill me-2"></i> DESVANTAGENS</h3>
+                    <ul class="card-text text-secondary small">
+                        <li>Alcance limitado comparado a tecnologias como LoRa.</li>
+                        <li>Sensível a barreiras físicas (paredes, móveis).</li>
+                        <li>Interferência com redes Wi-Fi (ambos operam em 2.4 GHz).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="iot-card mb-5">
+            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-rocket-takeoff-fill me-2"></i> 04. CASOS_DE_USO</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-heart-pulse-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Saúde Digital</h5>
+                        <p class="small text-secondary">Sensores de glicose e batimentos cardíacos conectados ao celular.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-geo-alt-fill fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Beacons</h5>
+                        <p class="small text-secondary">Marketing de proximidade e localização interna em museus ou shoppings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-secondary rounded">
+                        <i class="bi bi-watch fs-1 text-white mb-3"></i>
+                        <h5 class="text-white">Smart Wearables</h5>
+                        <p class="small text-secondary">Smartwatches que recebem notificações mantendo longa duração de bateria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="code-font text-secondary small mb-2">END_OF_LINE_BT_BLE</p>
+            <p class="text-white mb-0">Jefferson e Letícia</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.pageX + 'px';
+            glow.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+
+</html>

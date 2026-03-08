@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Protocols | Jefferson e Letícia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div id="cursor-glow" class="glow-point"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand code-font fw-bold" href="index.html">
+                <span class="text-cyan">01</span> IOT_PROTOCOLS
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge border border-secondary text-secondary code-font">STATUS: ONLINE</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center" style="padding-top: 150px; padding-bottom: 80px;">
+        <h1 class="hero-title mb-4">CONECTIVIDADE MÁQUINA A MÁQUINA</h1>
+        <p class="lead text-secondary mx-auto col-md-8">
+            Exploração técnica dos protocolos de comunicação para a Internet das Coisas.
+            Desenvolvido por <span class="text-white fw-bold"> Jefferson e Letícia </span>.
+        </p>
+    </header>
+
+    <main class="container">
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <a href="mqtt.html" class="iot-card">
+                    <div class="icon-hex"><i class="bi bi-broadcast"></i></div>
+                    <h3 class="card-title">MQTT</h3>
+                    <p class="card-text">Protocolo leve baseado em Publish/Subscribe. O padrão industrial para redes de
+                        baixa largura de banda.</p>
+                    <div class="btn-link">OPEN_MODULE <i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <a href="http.html" class="iot-card">
+                    <div class="icon-hex"><i class="bi bi-globe"></i></div>
+                    <h3 class="card-title">HTTP / REST</h3>
+                    <p class="card-text">Integração web tradicional adaptada para IoT. Facilidade de implementação via
+                        APIs RESTful.</p>
+                    <div class="btn-link">OPEN_MODULE <i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <a href="bluetooth.html" class="iot-card">
+                    <div class="icon-hex"><i class="bi bi-bluetooth"></i></div>
+                    <h3 class="card-title">Bluetooth & BLE</h3>
+                    <p class="card-text">Comunicação de curto alcance. Foco em dispositivos vestíveis e baixo consumo de
+                        energia (BLE).</p>
+                    <div class="btn-link">OPEN_MODULE <i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <a href="zigbee.html" class="iot-card">
+                    <div class="icon-hex"><i class="bi bi-globe"></i></div>
+                    <h3 class="card-title">Zigbee</h3>
+                    <p class="card-text">Rede em malha (mesh) robusta para automação residencial e controle industrial
+                        de sensores.</p>
+                    <div class="btn-link">OPEN_MODULE <i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <a href="lorawan.html" class="iot-card">
+                    <div class="icon-hex"><i class="bi bi-reception-4"></i></div>
+                    <h3 class="card-title">LoRaWAN</h3>
+                    <p class="card-text">Rede de longa distância (LPWAN). Ideal para cidades inteligentes e
+                        monitoramento agrícola remoto.</p>
+                    <div class="btn-link">OPEN_MODULE <i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <a href="nb-iot.html" class="iot-card">
+                    <div class="icon-hex"><i class="bi bi-sim"></i></div>
+                    <h3 class="card-title">NB-IoT / LTE-M</h3>
+                    <p class="card-text">Tecnologia celular otimizada para bilhões de dispositivos com conexão massiva e
+                        profunda cobertura.</p>
+                    <div class="btn-link">OPEN_MODULE <i class="bi bi-arrow-right"></i></div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <a href="referencias.html" class="iot-card text-center py-4 border-dashed"
+                    style="border-style: dashed;">
+                    <h5 class="card-title mb-0"><i class="bi bi-book me-2"></i> BIBLIOGRAFIA E REFERÊNCIAS</h5>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="code-font text-secondary small mb-2">BUILD_VERSION: 2026.03.08</p>
+            <p class="text-white mb-0">Jefferson e Letícia</p>
+            <p class="text-secondary x-small">Disciplina de Sistemas Embarcados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.pageX + 'px';
+            glow.style.top = e.pageY + 'px';
+        });
+
+        document.querySelectorAll('.iot-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                glow.style.boxShadow = '0 0 150px 80px rgba(34, 211, 238, 0.2)';
+            });
+            card.addEventListener('mouseleave', () => {
+                glow.style.boxShadow = '0 0 100px 50px rgba(34, 211, 238, 0.1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
