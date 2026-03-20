@@ -4,162 +4,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTTP REST IoT | Documentation</title>
+    <title>HTTP REST | The Web Giant</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root { --http-cyan: #06b6d4; --dark-bg: #030303; --card-bg: #0d0d0d; --border: #1a1a1a; }
+        body { background-color: var(--dark-bg); color: #e5e7eb; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .code-font { font-family: 'JetBrains Mono', monospace; }
+        .text-cyan { color: var(--http-cyan); text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); }
+        .iot-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 35px; margin-bottom: 2.5rem; transition: 0.3s; }
+        .iot-card:hover { border-color: rgba(6, 182, 212, 0.3); box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .navbar { background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--border); padding: 15px 0; backdrop-filter: blur(10px); }
+        .hero-title { font-size: 5rem; font-weight: 800; letter-spacing: -3px; color: #fff; background: linear-gradient(to bottom, #fff, #71717a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .highlight-box { background: rgba(6, 182, 212, 0.05); border-left: 4px solid var(--http-cyan); padding: 20px; border-radius: 8px; margin-top: 20px; }
+        .ascii-art { font-family: 'JetBrains Mono', monospace; color: var(--http-cyan); font-size: 0.75rem; line-height: 1.2; background: #000; padding: 15px; border-radius: 8px; border: 1px solid #222; overflow-x: auto;}
+        .status-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 4px; font-weight: bold; }
+        
+        /* Botão Flutuante para alternar protocolos */
+        .switch-protocol {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: var(--http-cyan);
+            color: #000;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            transition: 0.3s;
+        }
+        .switch-protocol:hover { transform: scale(1.1); color: #000; filter: brightness(1.2); }
+    </style>
 </head>
 
 <body>
 
-    <div id="cursor-glow" class="glow-point"></div>
+    <a href="lorawan.html" class="switch-protocol code-font">
+        <i class="bi bi-arrow-left-right"></i> VER LORAWAN
+    </a>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand code-font fw-bold" href="index.html">
-                <span class="text-cyan"><i class="bi bi-arrow-left"></i></span> RETURN_TO_CORE
+                <span class="text-cyan"><i class="bi bi-globe2"></i></span> HTTP_REST_v1.1
             </a>
-            <div class="ms-auto d-none d-md-block">
-                <span class="badge border border-cyan text-cyan code-font px-3">PROTOCOL: HTTP/REST</span>
+            <div class="ms-auto d-flex align-items-center gap-2">
+                <span class="badge bg-info bg-opacity-10 text-cyan border border-info border-opacity-25 code-font p-2">LAYER: APPLICATION</span>
+                <span class="badge bg-info bg-opacity-10 text-cyan border border-info border-opacity-25 code-font p-2">STACK: TCP/IP</span>
             </div>
         </div>
     </nav>
 
-    <header class="container text-center" style="padding-top: 150px; padding-bottom: 50px;">
-        <h1 class="hero-title mb-3">HTTP / REST</h1>
-        <p class="code-font text-cyan">HYPERTEXT TRANSFER PROTOCOL APPLIED TO IOT</p>
+    <header class="container text-center" style="padding-top: 160px; padding-bottom: 50px;">
+        <span class="text-cyan code-font fw-bold text-uppercase" style="letter-spacing: 2px;">THE UNIVERSAL LANGUAGE OF THE WEB</span>
+        <h1 class="hero-title mt-2">HTTP / REST</h1>
+        <p class="text-secondary fs-5 mx-auto mt-3" style="max-width: 750px;">O protocolo que faz a internet pulsar. No IoT, ele é o mestre da integração, conectando sensores diretamente a APIs e Dashboards.</p>
     </header>
 
     <main class="container">
-        
-        <section class="iot-card mb-4">
-            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-terminal-fill me-2"></i> 01. DEFINIÇÃO</h2>
-            <p class="card-text fs-5">
-                O HTTP é o protocolo fundamental da Web, mas em IoT ele é amplamente utilizado através de arquiteturas <strong>REST (Representational State Transfer)</strong>. 
-                Ele permite que dispositivos enviem e recebam dados utilizando os mesmos métodos que navegadores usam para acessar sites, facilitando a integração com sistemas em nuvem.
-            </p>
+
+        <section class="iot-card">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="text-cyan h4 fw-bold mb-3 text-uppercase code-font">01. O QUE É O HTTP?</h2>
+                    <p class="fs-5">Imagine que o **HTTP** é um mensageiro que leva cartas super detalhadas entre o seu dispositivo e um servidor.</p>
+                    <p class="text-secondary mt-3">Diferente do LoRaWAN, o HTTP não se importa com a bateria, ele se importa com a <strong>informação completa</strong>.</p>
+                    <div class="highlight-box">
+                        <strong class="text-white code-font">NA PROVA:</strong>
+                        <p class="small mb-0 mt-1">HTTP significa <strong>Hypertext Transfer Protocol</strong>. Ele é um protocolo <strong>Stateless</strong> (sem estado), o que significa que o servidor não guarda memória de requisições anteriores. Cada conversa é uma conversa nova.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 d-none d-md-block text-center">
+                    
+                    <pre class="ascii-art mt-3">
+  [CLIENTE]             [SERVIDOR]
+      |                     |
+      |---(Requisição)-----&gt;|
+      |                     |
+      |&lt;----(Resposta)------|
+      |                     |
+ (A conexão fecha logo após)
+                    </pre>
+                </div>
+            </div>
         </section>
 
-        <section class="iot-card mb-4">
-            <h2 class="card-title text-cyan h4 mb-3 fw-bold"><i class="bi bi-arrow-left-right me-2"></i> 02. ARQUITETURA</h2>
-            <p class="card-text">
-                Diferente do MQTT, o HTTP opera no modelo <strong>Cliente-Servidor</strong>. O dispositivo IoT (cliente) inicia uma conexão, faz uma requisição ao servidor e aguarda uma resposta.
-            </p>
+        <section class="iot-card">
+            <h2 class="text-cyan h4 fw-bold mb-4 code-font text-uppercase">02. ANATOMIA DE UMA REQUISIÇÃO</h2>
+            <p class="text-secondary mb-4">Para ser mestre, você precisa saber o que tem dentro da "carta" que o sensor envia:</p>
             
-            <div class="row g-3 mt-2">
+            <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="p-3 border border-secondary rounded bg-black">
-                        <h6 class="text-white fw-bold"><i class="bi bi-send"></i> MÉTODOS (Verbos)</h6>
-                        <ul class="small text-secondary mb-0">
-                            <li><span class="text-info">GET:</span> Solicita dados do sensor.</li>
-                            <li><span class="text-success">POST:</span> Envia novos dados/leituras.</li>
-                            <li><span class="text-warning">PUT:</span> Atualiza configurações.</li>
-                        </ul>
+                    <h6 class="text-white code-font small"><i class="bi bi-file-earmark-code"></i> HEADERS (O ENVELOPE)</h6>
+                    <div class="p-3 bg-black rounded border border-secondary small text-secondary">
+                        <p class="mb-1"><strong class="text-cyan">Método:</strong> POST</p>
+                        <p class="mb-1"><strong class="text-cyan">Host:</strong> api.meusensor.com</p>
+                        <p class="mb-1"><strong class="text-cyan">Content-Type:</strong> application/json</p>
+                        <p class="mb-0"><strong class="text-cyan">Auth:</strong> Bearer Token123...</p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="p-3 border border-secondary rounded bg-black">
-                        <h6 class="text-white fw-bold"><i class="bi bi-filetype-json"></i> FORMATO</h6>
-                        <p class="small text-secondary mb-0">Geralmente utiliza <strong>JSON</strong> ou <strong>XML</strong> para estruturar as informações de telemetria entre o dispositivo e a API.</p>
+                    <h6 class="text-white code-font small"><i class="bi bi-box-seam"></i> BODY / PAYLOAD (O CONTEÚDO)</h6>
+                    <div class="p-3 bg-black rounded border border-secondary">
+                        <pre class="mb-0 text-info small">
+{
+  "sensor_id": "DHT11_Lobby",
+  "temperatura": 24.5,
+  "status": "online"
+}</pre>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="iot-card mb-4">
-            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-cpu-fill me-2"></i> 03. SPEC_SHEET</h2>
+        <section class="iot-card text-center">
+            <h2 class="text-cyan h4 fw-bold mb-4 code-font text-uppercase">03. OS "VERBOS" DO PROTOCOLO</h2>
+            <div class="row g-3 text-center">
+                <div class="col-md-3"><div class="p-3 border border-secondary rounded"><span class="status-badge bg-info text-dark">GET</span></div></div>
+                <div class="col-md-3"><div class="p-3 border border-secondary rounded"><span class="status-badge bg-success text-dark">POST</span></div></div>
+                <div class="col-md-3"><div class="p-3 border border-secondary rounded"><span class="status-badge bg-warning text-dark">PUT</span></div></div>
+                <div class="col-md-3"><div class="p-3 border border-secondary rounded"><span class="status-badge bg-danger text-white">DELETE</span></div></div>
+            </div>
+            <p class="small text-secondary mt-3">Esses comandos formam a base das arquiteturas <strong>RESTful</strong>.</p>
+        </section>
+
+        <section class="iot-card">
+            <h2 class="text-cyan h4 fw-bold mb-4 code-font text-uppercase"><i class="bi bi-check-circle-fill me-2"></i> 04. O QUE O SERVIDOR RESPONDE?</h2>
             <div class="table-responsive">
                 <table class="table table-dark table-hover border-secondary">
-                    <thead class="code-font text-cyan">
-                        <tr>
-                            <th>RECURSO</th>
-                            <th>VALOR / TIPO</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-secondary">
-                        <tr>
-                            <td class="text-white fw-bold">ALCANCE</td>
-                            <td>Global (Via Internet TCP/IP)</td>
-                        </tr>
-                        <tr>
-                            <td class="text-white fw-bold">CONSUMO</td>
-                            <td>Alto (Devido ao overhead dos cabeçalhos e conexões persistentes)</td>
-                        </tr>
-                        <tr>
-                            <td class="text-white fw-bold">TAXA DE DADOS</td>
-                            <td>Alta (Capaz de transferir grandes volumes de informação)</td>
-                        </tr>
-                        <tr>
-                            <td class="text-white fw-bold">ESTADO</td>
-                            <td>Stateless (Cada requisição é independente)</td>
-                        </tr>
+                    <thead><tr class="text-cyan small"><th>CÓDIGO</th><th>MENSAGEM</th><th>SIGNIFICADO</th></tr></thead>
+                    <tbody class="small text-secondary">
+                        <tr><td class="text-white fw-bold">200 / 201</td><td>OK / Created</td><td>"Recebi e guardei!"</td></tr>
+                        <tr><td class="text-white fw-bold">401 / 403</td><td>Unauthorized</td><td>"Senha errada!"</td></tr>
+                        <tr><td class="text-white fw-bold">404</td><td>Not Found</td><td>"Sensor sumiu!"</td></tr>
+                        <tr><td class="text-white fw-bold">500</td><td>Error</td><td>"Nuvem pifou!"</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <div class="row g-4 mb-4">
+        <div class="row g-4 mb-5 text-center">
             <div class="col-md-6">
-                <div class="iot-card" style="border-left: 4px solid #10b981;">
-                    <h3 class="card-title h5 text-success fw-bold"><i class="bi bi-check-circle-fill me-2"></i> VANTAGENS</h3>
-                    <ul class="card-text text-secondary small">
-                        <li>Facilidade de integração com quase qualquer serviço Cloud/Web.</li>
-                        <li>Grande suporte de bibliotecas em todas as linguagens.</li>
-                        <li>Atravessa firewalls corporativos com facilidade (Porta 80/443).</li>
-                    </ul>
+                <div class="iot-card h-100" style="border-top: 5px solid #ef4444;">
+                    <h3 class="h5 text-white fw-bold">DESVANTAGEM</h3>
+                    <p class="small text-secondary"><strong>Overhead:</strong> Os cabeçalhos de texto são gigantes para mensagens pequenas, o que drena a bateria.</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="iot-card" style="border-left: 4px solid #ef4444;">
-                    <h3 class="card-title h5 text-danger fw-bold"><i class="bi bi-x-circle-fill me-2"></i> DESVANTAGENS</h3>
-                    <ul class="card-text text-secondary small">
-                        <li>Alta carga de dados (overhead) para mensagens pequenas.</li>
-                        <li>Dificuldade para o servidor "avisar" o dispositivo (falta de push nativo).</li>
-                        <li>Consumo de bateria elevado para dispositivos móveis.</li>
-                    </ul>
+                <div class="iot-card h-100" style="border-top: 5px solid var(--http-cyan);">
+                    <h3 class="h5 text-white fw-bold">VANTAGEM</h3>
+                    <p class="small text-secondary"><strong>Universal:</strong> Funciona em qualquer lugar e atravessa firewalls sem esforço.</p>
                 </div>
             </div>
         </div>
-
-        <section class="iot-card mb-5">
-            <h2 class="card-title text-cyan h4 mb-4 fw-bold"><i class="bi bi-rocket-takeoff-fill me-2"></i> 04. CASOS_DE_USO</h2>
-            <div class="row g-4 text-center">
-                <div class="col-md-4">
-                    <div class="p-4 border border-secondary rounded">
-                        <i class="bi bi-cloud-arrow-up-fill fs-1 text-white mb-3"></i>
-                        <h5 class="text-white">Dashboards Web</h5>
-                        <p class="small text-secondary">Visualização de dados históricos em painéis de controle centralizados.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 border border-secondary rounded">
-                        <i class="bi bi-camera-video-fill fs-1 text-white mb-3"></i>
-                        <h5 class="text-white">Câmeras IP</h5>
-                        <p class="small text-secondary">Transmissão de grandes pacotes de dados e streams de mídia.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 border border-secondary rounded">
-                        <i class="bi bi-database-fill-gear fs-1 text-white mb-3"></i>
-                        <h5 class="text-white">Gateways Industriais</h5>
-                        <p class="small text-secondary">Sincronização de grandes bancos de dados locais com a nuvem.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
-    <footer class="text-center">
-        <div class="container">
-            <p class="code-font text-secondary small mb-2">END_OF_LINE_HTTP_REST</p>
-            <p class="text-white mb-0">Jefferson e Letícia</p>
-        </div>
+    <footer class="text-center py-5 border-top border-secondary opacity-30">
+        <p class="code-font small mb-0">HTTP_SESSION_CLOSED // J&L // 2026</p>
     </footer>
 
 </body>
-
-
 </html>
